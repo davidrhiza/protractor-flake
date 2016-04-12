@@ -51,6 +51,8 @@ export default function (options = {}, callback = function noop () {}) {
 
     if (specFiles.length) {
       protractorArgs = protractorArgs.filter((arg) => !/^--suite=/.test(arg))
+      protractorArgs.pop();
+      protractorArgs.pop();
       protractorArgs.push('--specs', specFiles.join(','))
     }
 
